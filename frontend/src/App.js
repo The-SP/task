@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import Login from "./pages/user/Login";
 import Logout from "./pages/user/Logout";
 import Signup from "./pages/user/Signup";
@@ -13,6 +12,9 @@ import ResetPasswordConfirm from "./pages/user/ResetPasswordConfirm";
 // Blog
 import BlogList from "./pages/blog/BlogList";
 import BlogCreate from "./pages/blog/BlogCreate";
+import BlogDetail from "./pages/blog/BlogDetail";
+import BlogUpdate from "./pages/blog/BlogUpdate";
+import BlogDelete from "./pages/blog/BlogDelete";
 
 const App = () => (
   <BrowserRouter>
@@ -20,7 +22,7 @@ const App = () => (
       <Navbar />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<BlogList />} />
         {/* user pages */}
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/logout" element={<Logout />} />
@@ -34,9 +36,9 @@ const App = () => (
         {/* Blog pages */}
         <Route exact path="/blogs" element={<BlogList />} />
         <Route exact path="/blogs/create" element={<BlogCreate />} />
-        {/* <Route exact path="/blogs/:id" element={<BlogDetail />} />
+        <Route exact path="/blogs/:id" element={<BlogDetail />} />
         <Route exact path="/blogs/:id/update" element={<BlogUpdate />} />
-        <Route exact path="/blogs/:id/delete" element={<BlogDelete />} /> */}
+        <Route exact path="/blogs/:id/delete" element={<BlogDelete />} />
       </Routes>
     </AuthProvider>
   </BrowserRouter>
