@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import axiosInstance from "../../axios_instance";
 import Spinner from "../../components/Spinner";
 import BlogItem from "./BlogItem";
+import Pagination from "./Pagination";
 
 const BlogList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [blogs, setBlogs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const BLOGS_PER_PAGE = 5;
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,6 +21,16 @@ const BlogList = () => {
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
   }, []);
+
+  // Get current posts
+  const indexofLastBlog = currentPage * BLOGS_PER_PAGE;
+  const indexofFirstBlog = indexofLastBlog - BLOGS_PER_PAGE;
+  const currentBlogs = blogs
+    ? blogs.slice(indexofFirstBlog, indexofLastBlog)
+    : [];
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (isLoading) return <Spinner />;
 
@@ -32,9 +45,14 @@ const BlogList = () => {
   return (
     <div className="container py-5">
       <div className="text-center mb-5 page-title fs-1">Blogs</div>
-      {blogs.map((blog, index) => (
+      {currentBlogs.map((blog, index) => (
         <BlogItem key={index} blog={blog} />
       ))}
+      <Pagination
+        blogsPerPage={BLOGS_PER_PAGE}
+        totalBlogs={blogs.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
