@@ -34,7 +34,7 @@ const BlogUpdate = () => {
       <h2 className="page-title text-center">Update Blog</h2>
       <form onSubmit={handleSubmit} className="shadow p-3 p-md-4">
         <div className="form-group mb-3">
-          <label className="form-label" htmlFor="title">
+          <label className="form-label fw-bold" htmlFor="title">
             Title:
           </label>
           <input
@@ -44,10 +44,11 @@ const BlogUpdate = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            autoFocus
           />
         </div>
         <div className="form-group mb-3">
-          <label className="form-label" htmlFor="content">
+          <label className="form-label fw-bold" htmlFor="content">
             Content:
           </label>
           <textarea

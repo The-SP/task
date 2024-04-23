@@ -44,7 +44,7 @@ const BlogList = () => {
 
   return (
     <div className="container py-5">
-      <div className="text-center mb-5 page-title fs-1">Blogs</div>
+      <h2 className="text-center mb-5 page-title">Blogs</h2>
       {currentBlogs.map((blog, index) => (
         <BlogItem key={index} blog={blog} />
       ))}

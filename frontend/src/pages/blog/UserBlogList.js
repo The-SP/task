@@ -31,7 +31,7 @@ const UserBlogList = () => {
 
   return (
     <div className="container py-5">
-      <div className="text-center mb-5 page-title fs-1">Your Blogs</div>
+      <h2 className="text-center mb-5 page-title ">Your Blogs</h2>
       {blogs.map((blog, index) => (
         <BlogItem key={index} blog={blog} />
       ))}

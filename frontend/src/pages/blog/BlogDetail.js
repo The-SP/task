@@ -32,14 +32,12 @@ const BlogDetail = () => {
   return (
     <div className="card container mt-5 shadow">
       <div className="card-body">
-        <h5 className="card-title">{blog.title}</h5>
-        <p className="card-text">
-          <small className="text-muted">
-            By {blog.author_name} on{" "}
+        <h5 className="card-title fs-1">{blog.title}</h5>
+        <p className="card-text lead">
+            By {blog.author_name} on {" "}
             {new Date(blog.date).toLocaleString("en-US", options)}
-          </small>
         </p>
-        <p className="card-text">{blog.content}</p>
+        <p className="card-text fs-5 mt-4">{blog.content}</p>
         {user && user.id === blog.author && (
           <div>
             <Link to={`/blogs/${id}/update`} className="btn btn-primary me-2">

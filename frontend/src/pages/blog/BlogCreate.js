@@ -25,7 +25,7 @@ const BlogCreate = () => {
       <h2 className="page-title text-center">Create new blog</h2>
       <form onSubmit={handleSubmit} className="shadow p-3 p-md-4">
         <div className="form-group mb-3">
-          <label className="form-label" htmlFor="title">
+          <label className="form-label fw-bold" htmlFor="title">
             Title:
           </label>
           <input
@@ -34,11 +34,12 @@ const BlogCreate = () => {
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            autoFocus
             required
           />
         </div>
         <div className="form-group mb-3">
-          <label className="form-label" htmlFor="content">
+          <label className="form-label fw-bold" htmlFor="content">
             Content:
           </label>
           <textarea

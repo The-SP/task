@@ -1,7 +1,7 @@
 .page-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 500;
-  background-image: linear-gradient(45deg, #0f0598, #ee4b2b);
+  background-image: linear-gradient(5deg, #0a25d2, #ee4b2b);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -10,4 +10,14 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.blog-item {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-item:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
