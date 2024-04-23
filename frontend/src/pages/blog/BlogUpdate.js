@@ -10,7 +10,7 @@ const BlogUpdate = () => {
 
   useEffect(() => {
     axiosInstance
-      .get(`api/blogs/${id}/update`)
+      .get(`api/blogs/${id}/`)
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);

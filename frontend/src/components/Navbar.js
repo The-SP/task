@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
 const Navbar = () => {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const authLinks = () => (
     <>
@@ -46,7 +46,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            {isLoggedIn ? authLinks() : guestLinks()}
+            {user ? authLinks() : guestLinks()}
           </div>
         </div>
       </div>

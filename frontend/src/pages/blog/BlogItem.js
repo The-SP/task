@@ -17,7 +17,7 @@ const BlogItem = ({ blog }) => {
         <h5 className="card-title">{blog.title}</h5>
         <p className="card-text">
           <small className="text-muted">
-            By {blog.author} on {formattedDate}
+            By {blog.author_name} on {formattedDate}
           </small>
         </p>
         <p className="card-text">{truncatedContent}</p>
