@@ -33,3 +33,11 @@ class BlogUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
     def perform_update(self, serializer):
         serializer.save(author=self.request.user)
+
+
+class UserBlogList(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = BlogSerializer
+
+    def get_queryset(self):
+        return Blog.objects.filter(author=self.request.user).order_by('-date')

@@ -10,6 +10,9 @@ const Navbar = () => {
       <Link className="nav-link" to="/blogs/create">
         Create
       </Link>
+      <Link className="nav-link" to="/blogs/user">
+        MyBlogs
+      </Link>
       <Link className="nav-link" to="/logout">
         Logout
       </Link>

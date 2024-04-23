@@ -15,6 +15,7 @@ import BlogCreate from "./pages/blog/BlogCreate";
 import BlogDetail from "./pages/blog/BlogDetail";
 import BlogUpdate from "./pages/blog/BlogUpdate";
 import BlogDelete from "./pages/blog/BlogDelete";
+import UserBlogList from "./pages/blog/UserBlogList";
 
 const App = () => (
   <BrowserRouter>
@@ -39,6 +40,7 @@ const App = () => (
         <Route exact path="/blogs/:id" element={<BlogDetail />} />
         <Route exact path="/blogs/:id/update" element={<BlogUpdate />} />
         <Route exact path="/blogs/:id/delete" element={<BlogDelete />} />
+        <Route exact path="/blogs/user" element={<UserBlogList />} />
       </Routes>
     </AuthProvider>
   </BrowserRouter>
