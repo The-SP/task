@@ -34,8 +34,8 @@ const BlogDetail = () => {
       <div className="card-body">
         <h5 className="card-title fs-1">{blog.title}</h5>
         <p className="card-text lead">
-            By {blog.author_name} on {" "}
-            {new Date(blog.date).toLocaleString("en-US", options)}
+          By <span className="fw-normal">{blog.author_name}</span> on{" "}
+          {new Date(blog.date).toLocaleString("en-US", options)}
         </p>
         <p className="card-text fs-5 mt-4">{blog.content}</p>
         {user && user.id === blog.author && (

@@ -16,7 +16,8 @@ const BlogItem = ({ blog }) => {
       <div className="card-body">
         <h5 className="card-title fs-2">{blog.title}</h5>
         <p className="card-text lead">
-            By {blog.author_name} on {formattedDate}
+          By <span className="fw-normal">{blog.author_name}</span> on{" "}
+          {formattedDate}
         </p>
         <p className="card-text fs-5 mt-4">{truncatedContent}</p>
         <Link to={`/blogs/${blog.id}`} className="btn btn-primary">
