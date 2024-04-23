@@ -7,9 +7,9 @@ const Navbar = () => {
 
   const authLinks = () => (
     <>
-      {/* <Link className="nav-link" to="/profile">
-        Profile
-      </Link> */}
+      <Link className="nav-link" to="/blogs/create">
+        Create
+      </Link>
       <Link className="nav-link" to="/logout">
         Logout
       </Link>

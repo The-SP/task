@@ -18,7 +18,12 @@ const Home = () => {
     <div className="container">
       <div className="jumbotron mt-5">
         {current_user && (
-          <h1 className="display-4">Welcome, {current_user.name}</h1>
+          <>
+            <h1 className="display-4">Welcome, {current_user.name}</h1>
+            <Link to="/blogs" role="button" className="btn btn-success btn-lg">
+              Blogs
+            </Link>
+          </>
         )}
 
         {!current_user && (

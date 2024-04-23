@@ -10,6 +10,9 @@ import Logout from "./pages/user/Logout";
 import Signup from "./pages/user/Signup";
 import ResetPassword from "./pages/user/ResetPassword";
 import ResetPasswordConfirm from "./pages/user/ResetPasswordConfirm";
+// Blog
+import BlogList from "./pages/blog/BlogList";
+import BlogCreate from "./pages/blog/BlogCreate";
 
 const App = () => (
   <BrowserRouter>
@@ -28,8 +31,12 @@ const App = () => (
           path="/password/reset/confirm/:uid/:token"
           element={<ResetPasswordConfirm />}
         />
-        {/* profile pages */}
-        {/* <Route exact path="/profile" element={<Profile />} /> */}
+        {/* Blog pages */}
+        <Route exact path="/blogs" element={<BlogList />} />
+        <Route exact path="/blogs/create" element={<BlogCreate />} />
+        {/* <Route exact path="/blogs/:id" element={<BlogDetail />} />
+        <Route exact path="/blogs/:id/update" element={<BlogUpdate />} />
+        <Route exact path="/blogs/:id/delete" element={<BlogDelete />} /> */}
       </Routes>
     </AuthProvider>
   </BrowserRouter>
