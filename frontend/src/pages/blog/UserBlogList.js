@@ -12,7 +12,7 @@ const UserBlogList = () => {
     axiosInstance
       .get("api/blogs/user/")
       .then((res) => {
-        console.log(`Fetched ${res.data.length} blogs`);
+        // console.log(`Fetched ${res.data.length} blogs`);
         setBlogs(res.data);
       })
       .catch((err) => console.log(err))

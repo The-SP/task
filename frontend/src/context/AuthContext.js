@@ -11,14 +11,14 @@ export const AuthProvider = ({ children }) => {
       // make a GET request to /auth/users/me to fetch user information and update the user state
       axiosInstance.get("/auth/users/me").then((response) => {
         setUser(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       });
     };
 
     if (!user && localStorage.getItem("access_token")) {
       fetchUser();
     }
-  }, []);
+  }, [user]);
 
   let contextData = {
     user,

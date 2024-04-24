@@ -14,7 +14,7 @@ const BlogCreate = () => {
     axiosInstance
       .post("api/blogs/create/", { title, content })
       .then((res) => {
-        console.log("Blog posted:", res.data.title);
+        // console.log("Blog posted:", res.data.title);
         navigate("/blogs");
       })
       .catch((err) => console.log("Form submit error:", err));

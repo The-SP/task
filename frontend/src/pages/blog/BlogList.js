@@ -15,7 +15,7 @@ const BlogList = () => {
     axiosInstance
       .get("api/blogs/")
       .then((res) => {
-        console.log(`Fetched ${res.data.length} blogs`);
+        // console.log(`Fetched ${res.data.length} blogs`);
         setBlogs(res.data);
       })
       .catch((err) => console.log(err))
@@ -30,7 +30,13 @@ const BlogList = () => {
     : [];
 
   // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   if (isLoading) return <Spinner />;
 
